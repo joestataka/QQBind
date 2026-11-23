@@ -90,6 +90,8 @@ qqbind verify 123456 <发送者QQ号>
 
 ## 解绑
 
+机器人在群里识别 `解绑 <游戏ID>`（也兼容 `解绑<游戏ID>`、`解除绑定 <ID>`），通过 RCON 执行：
+
 ```text
 qqbind unbind <游戏ID>
 ```
