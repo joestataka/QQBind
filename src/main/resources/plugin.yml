@@ -1,0 +1,15 @@
+name: QQBind
+version: 1.0.0
+main: qqbind.QQBindPlugin
+api-version: '26.3'
+description: 进服 QQ 绑定验证白名单
+author: dsh
+commands:
+  qqbind:
+    description: QQBind 管理指令
+    usage: /qqbind <verify|unbind|list|status|reload>
+    permission: qqbind.admin
+permissions:
+  qqbind.admin:
+    description: QQBind 管理权限
+    default: op
