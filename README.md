@@ -81,6 +81,8 @@ mvn -q package
 ```
 
 > `pom.xml` 使用 `io.papermc.paper:paper-api:26.3-R0.1-SNAPSHOT`。若该版本在你的仓库不存在，请改用方式二或改成你服务端对应的 paper-api 版本。
+>
+> ⚠️ **必须用 `--release 21`（或 ≤25）编译**：用 JDK 27 默认目标会生成 class major 71，Paper 自带的 ASM 9.9.1 不支持，启动时报 `Unsupported class file major version 71`。Java 21 字节码在 Java 25/27 运行时完全可用。
 
 ### 方式二：用服务端自带的 libraries 编译（无需联网下载依赖）
 
@@ -91,7 +93,7 @@ SERVER=/path/to/server
 CP=$(find "$SERVER/libraries" -name "*.jar" | tr "\n" ":")
 CP="$CP:$(find "$SERVER/versions" -name "paper-*.jar" | head -1)"
 mkdir -p out
-javac -encoding UTF-8 -cp "$CP" -d out src/main/java/qqbind/QQBindPlugin.java
+javac --release 21 -encoding UTF-8 -cp "$CP" -d out src/main/java/qqbind/QQBindPlugin.java
 cp src/main/resources/* out/
 jar cf QQBind-1.0.0.jar -C out .
 ```
