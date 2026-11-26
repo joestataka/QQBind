@@ -1,5 +1,8 @@
 # QQBind
 
+[![Release](https://img.shields.io/github/v/release/joestataka/QQBind)](https://github.com/joestataka/QQBind/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Minecraft 服务器「进服绑定验证」白名单插件。
 
 未绑定 QQ 的玩家在**登录阶段**就被拦下，客户端断开界面会显示验证码；玩家到 QQ 群发送「绑定 <验证码>」完成绑定后，重新进入即可放行。适合 QQ 群服、朋友服，防止陌生人直接进服。
@@ -17,7 +20,7 @@ Minecraft 服务器「进服绑定验证」白名单插件。
 
 ## 安装
 
-1. 把 `QQBind-1.0.0.jar` 放进服务端 `plugins/` 目录。
+1. 从 [Releases](https://github.com/joestataka/QQBind/releases/latest) 下载 `QQBind-1.0.0.jar`（附 `SHA256SUMS.txt` 校验和），放进服务端 `plugins/` 目录。
 2. **关闭原生白名单**：编辑 `server.properties`，设置 `white-list=false`（原生白名单会在登录时先拦截，导致看不到本插件的自定义提示）。
 3. 启动服务器，插件会生成 `plugins/QQBind/config.yml`。
 4. 在 QQ 机器人侧加「绑定 <验证码>」到 `/qqbind verify` 的接线，详见 [docs/astrbot-integration.md](docs/astrbot-integration.md)。
